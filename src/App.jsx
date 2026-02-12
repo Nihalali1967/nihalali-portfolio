@@ -8,6 +8,7 @@ import Hero from "./pages/Hero/Hero";
 import Skills from "./pages/Skills/Skills";
 import Education from "./pages/Education/Education";
 import Blog from "./pages/Blog/Blog";
+import SEOHead from "./components/SEOHead";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -16,6 +17,7 @@ export default function App() {
 
   return (
     <>
+      <SEOHead />
       <Header />
       {/* Conditional Rendering */}
       {isOnePage ? (

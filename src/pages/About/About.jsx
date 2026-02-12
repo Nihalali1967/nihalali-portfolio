@@ -14,7 +14,7 @@ export default function About() {
                 <img
                   src={HeroImg}
                   className="rounded-[15px] shadow block"
-                  alt="payments illustration"
+                  alt="Nihal Ali - Best PHP Laravel Developer and Senior Full Stack Developer from Kerala India"
                   width={1207}
                   height={929}
                 />

@@ -1,0 +1,7 @@
+# Robots.txt for Nihal Ali Portfolio
+# https://nihalali-portfolio.vercel.app/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://nihalali-portfolio.vercel.app/sitemap.xml

@@ -135,9 +135,27 @@ const profile = {
   return (
     <>
       <main className="bg-[#020617] text-white min-h-screen">
+        {/* SEO-rich hidden content for search engine crawlers */}
+        <div className="sr-only" aria-hidden="false">
+          <h1>Nihal Ali - Best PHP Laravel Developer | Senior Full Stack Developer | Freelance Web Developer Kerala India</h1>
+          <p>Nihal Ali is the best PHP developer and senior Laravel developer based in Malappuram, Kerala, India. 
+          Specializing in PHP Laravel development, full stack web development, RESTful API design, payment gateway integration, 
+          and enterprise ERP solutions. Hire the best freelance PHP Laravel developer for scalable web applications, 
+          backend development, and database-driven solutions. Expert in MySQL, PostgreSQL, JavaScript, React, Tailwind CSS, 
+          and Microsoft Azure. Available for freelance projects worldwide. Best freelance developer in Kerala with experience 
+          in fintech applications, HR management systems, NFC business card platforms, and resort booking systems.</p>
+          <h2>Services: PHP Development, Laravel Development, Full Stack Development, REST API Development, 
+          Payment Gateway Integration, ERP Development, Freelance Web Development, Backend Development</h2>
+          <p>Looking for the best PHP developer in India? Nihal Ali offers senior-level Laravel development services 
+          including custom web application development, API integration, database optimization, and cloud deployment. 
+          Top-rated freelance developer specializing in PHP Laravel framework with proven experience building 
+          production-ready enterprise applications.</p>
+        </div>
+
         <section
           className="hero min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-10 md:py-16 lg:py-0 hero-section-padding"
           style={{ paddingTop: "var(--hero-padding-top, 0)" }}
+          aria-label="Nihal Ali - Best PHP Laravel Developer Portfolio"
         >
           <div className="absolute inset-0"></div>
 
