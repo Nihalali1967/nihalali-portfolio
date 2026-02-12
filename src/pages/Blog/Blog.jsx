@@ -11,13 +11,12 @@ import img6 from "@/assets/images/blog/WhatsApp Image 2026-02-08 at 11.44.15 AM 
 import img7 from "@/assets/images/blog/WhatsApp Image 2026-02-08 at 11.44.15 AM.jpeg";
 import img8 from "@/assets/images/blog/WhatsApp Image 2026-02-08 at 11.44.16 AM (1).jpeg";
 import img9 from "@/assets/images/blog/WhatsApp Image 2026-02-08 at 11.44.16 AM (3).jpeg";
-import img10 from "@/assets/images/blog/WhatsApp Image 2026-02-08 at 11.44.16 AM.jpeg";
 import img11 from "@/assets/images/blog/WhatsApp Image 2026-02-08 at 11.50.20 AM (1).jpeg";
 import img12 from "@/assets/images/blog/WhatsApp Image 2026-02-08 at 11.50.21 AM (1).jpeg";
 import img13 from "@/assets/images/blog/WhatsApp Image 2026-02-08 at 11.50.22 AM.jpeg";
 
 const images = [
-  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13
+  img1, img2, img3, img4, img5, img6, img7, img8, img9,  img11, img12, img13
 ];
 
 export default function Blog() {

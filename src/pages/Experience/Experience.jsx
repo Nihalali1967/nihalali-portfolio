@@ -55,7 +55,7 @@ const ExperienceSection = () => {
   const experiences = [
     {
       icon: Network,
-      title: "Software Developer",
+      title: "PHP Laravel Developer",
       company: "D-FINE DIGITAL LLP, Kottakal",
       period: "Jan 2024 - Present",
       description: "Developed and maintained scalable backend modules using Laravel for fintech and enterprise applications. Designed and implemented RESTful APIs for mobile and web apps. Integrated secure payment gateways, handled transaction workflows, and implemented hardware device integration for real-time data communication.",
@@ -69,10 +69,10 @@ const ExperienceSection = () => {
     },
     {
       icon: Code2,
-      title: "Software Developer",
+      title: "PHP Developer",
       company: "NATMCO SOLUTION PVT LLP, Malappuram",
       period: "Sep 2023 - Nov 2024",
-      description: "Contributed to the development of ERP-based web applications using Laravel. Built and maintained backend services and REST APIs for business workflows. Integrated cloud services and deployment workflows using Microsoft Azure.",
+      description: "Contributed to the development of ERP-based web applications using Laravel and Core PHP. Built and maintained backend services and REST APIs for business workflows. Integrated cloud services and deployment workflows using Microsoft Azure.",
     },
     // {
     //   icon: Layers,

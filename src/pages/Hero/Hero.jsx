@@ -51,13 +51,12 @@ export default function Hero() {
   const [code] = useState(`
 const profile = {
     name: 'Nihal Ali',
-    title: 'Software Developer | Backend Specialist',
+    title: 'PHP Laravel Developer',
     skills: [
-        'PHP', 'Laravel', 'MySQL', 'PostgreSQL',
-        'RESTful APIs', 'JavaScript', 'React',
-        'Tailwind', 'Git', 'Microsoft Azure'
+        'PHP', 'Laravel', 'Microsoft Azure', 'PostgreSQL',  'Payment Gateway Integration',
+        'RESTful APIs', 'Modular architecture', 'Query Optimization', 'JavaScript', 'React',
+        'Tailwind', 'Git', 'MySQL'
     ],
-    hardWorker: true,
     quickLearner: true,
     problemSolver: true,
     yearsOfExperience: 3,
@@ -65,7 +64,7 @@ const profile = {
         return (
             this.hardWorker &&
             this.problemSolver &&
-            this.skills.length >= 10 &&
+            this.skills.length >= 10+ 
             this.yearsOfExperience >= 3
         );
     }
@@ -177,9 +176,9 @@ const profile = {
               {/* Welcome badge */}
               <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 mb-6 sm:mb-8 animate__animated animate__fadeInDown animate__delay-1s">
                 <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
-                <span className="text-gray-300 text-xs sm:text-sm font-medium">
+                {/* <span className="text-gray-300 text-xs sm:text-sm font-medium">
                   Welcome to my universe
-                </span>
+                </span> */}
               </div>
 
               {/* Name section */}
