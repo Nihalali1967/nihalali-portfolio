@@ -1,6 +1,6 @@
 import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import finkey from "@/assets/images/finkey.png";
 import skyerp from "@/assets/images/skyerp.png";
@@ -144,20 +144,35 @@ function Card({
 }) {
   const container = useRef(null);
   const scale = useTransform(progress, range, [1, targetScale]);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div
       ref={container}
-      className="h-screen flex items-center justify-center sticky top-0 project-container"
+      className={`flex items-center justify-center ${
+        isMobile ? 'py-4' : 'h-screen sticky top-0'
+      } project-container`}
     >
       <motion.div
-        style={{
-          scale,
-          top: `calc(-5vh + ${i * 25}px)`,
-          transform: `scale(var(--project-scale, 1))`,
-          marginTop: "var(--project-margin, 0)",
-        }}
-        className="relative -top-[25%] h-auto w-[90%] md:w-[85%] lg:w-[75%] xl:w-[65%] origin-top project-card"
+        style={
+          isMobile
+            ? {}
+            : {
+                scale,
+                top: `calc(-5vh + ${i * 25}px)`,
+                transform: `scale(var(--project-scale, 1))`,
+                marginTop: "var(--project-margin, 0)",
+              }
+        }
+        className={`relative h-auto w-[92%] md:w-[85%] lg:w-[75%] xl:w-[65%] origin-top project-card ${
+          isMobile ? '' : '-top-[25%]'
+        }`}
         whileHover={{
           y: -8,
           transition: { duration: 0.3 },
@@ -166,7 +181,7 @@ function Card({
         {/* Modern split card design */}
         <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-xl">
           {/* Image section - full width on mobile, 55% on desktop */}
-          <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden">
+          <div className="w-full md:w-[55%] h-[200px] sm:h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden">
             <motion.img
               src={image}
               alt={title}
