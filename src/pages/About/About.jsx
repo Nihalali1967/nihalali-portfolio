@@ -6,7 +6,7 @@ export default function About() {
       <section id="about" className="py-16 md:py-32  text-white bg-[#04081A]">
         <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
           <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl text-white">
-            Software Developer, Backend Specialist, API Engineer
+            Backend Engineer, PHP Laravel Specialist, API Architect
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
             <div className="relative mb-6 sm:mb-0">
@@ -23,19 +23,21 @@ export default function About() {
 
             <div className="relative space-y-4">
               <p className="text-white">
-                Hello! I'm Nihal Ali, a results-driven Software Developer with
-                strong experience in PHP and Laravel, specializing in{" "}
+                Hello! I'm Nihal Ali, a Backend Engineer{" "}
                 <span className="font-bold text-white">
-                  backend development, REST API design, and database-driven applications
-                </span>
-                . I build scalable web applications, integrate third-party services
-                such as payment gateways, and collaborate effectively with cross-functional teams.
+                  architecting and delivering production-grade
+                </span>{" "}
+                PHP/Laravel applications for
+                fintech, ERP, and enterprise clients across India and the Gulf region.
+                I specialize in scalable REST API design, secure payment-gateway integration,
+                database optimization, and hardware/IoT integration.
               </p>
               <p className="text-white">
-                Proficient in Laravel, MySQL, PostgreSQL, Blade, Tailwind, Bootstrap,
-                JavaScript, and React. Experienced with Git, Postman, Microsoft Azure,
-                and Linux deployment. I emphasize clean, maintainable code and
-                continuously improving system performance, security, and user experience.
+                I have demonstrated leadership in mentoring junior developers, driving
+                code-quality standards, and owning end-to-end feature delivery from
+                architecture to deployment. Proficient in Laravel, MySQL, PostgreSQL,
+                Redis, Docker, CI/CD, Microsoft Azure, and Linux server administration.
+                I emphasize SOLID principles, design patterns, and clean, maintainable code.
               </p>
 
               <div className="pt-6">
@@ -49,7 +51,7 @@ export default function About() {
 
                   <div className="mt-6 space-y-3">
                     <cite className="block font-medium text-white">
-                      Nihal Ali — Software Developer
+                      Nihal Ali — Backend Engineer
                     </cite>
                     <div className="flex items-center gap-2">
                       <span className="text-teal-400 text-lg">⚡</span>

@@ -42,30 +42,32 @@ const GridBackground = () => {
 
 export default function Hero() {
   const words = [
-    "PHP/Laravel Developer & Backend Specialist",
-    "RESTful API & Payment Gateway Integration",
-    "Scalable Web Application Engineer",
-    "Database-Driven Application Developer",
+    "Backend Engineer & PHP Laravel Specialist",
+    "Scalable REST API Design & Architecture",
+    "Payment Gateway Integration & IoT",
+    "Mentoring & Team Leadership",
   ];
 
   const [code] = useState(`
 const profile = {
     name: 'Nihal Ali',
-    title: 'PHP Laravel Developer',
+    title: 'Backend Engineer & PHP Laravel Developer',
+    experience: 'Production-grade',
+    domains: ['Fintech', 'ERP', 'Enterprise', 'IoT'],
     skills: [
-        'PHP', 'Laravel', 'Microsoft Azure', 'PostgreSQL',  'Payment Gateway Integration',
-        'RESTful APIs', 'Modular architecture', 'Query Optimization', 'JavaScript', 'React',
-        'Tailwind', 'Git', 'MySQL'
+        'PHP', 'Laravel', 'RESTful APIs', 'MySQL', 'PostgreSQL',
+        'Redis', 'Docker', 'Azure', 'Payment Gateways',
+        'IoT Integration', 'Code Review', 'Mentoring'
     ],
-    quickLearner: true,
-    problemSolver: true,
-    yearsOfExperience: 3,
+    practices: [
+        'SOLID Principles', 'Design Patterns',
+        'CI/CD Pipelines', 'Unit Testing (PHPUnit)'
+    ],
+    seniorLevel: true,
     hireable: function() {
         return (
-            this.hardWorker &&
-            this.problemSolver &&
-            this.skills.length >= 10+ 
-            this.yearsOfExperience >= 3
+            this.seniorLevel &&
+            this.skills.length >= 10
         );
     }
 };
@@ -137,25 +139,23 @@ const profile = {
       <main className="bg-[#020617] text-white min-h-screen">
         {/* SEO-rich hidden content for search engine crawlers */}
         <div className="sr-only" aria-hidden="false">
-          <h1>Nihal Ali - Best PHP Laravel Developer | Senior Full Stack Developer | Freelance Web Developer Kerala India</h1>
-          <p>Nihal Ali is the best PHP developer and senior Laravel developer based in Malappuram, Kerala, India. 
-          Specializing in PHP Laravel development, full stack web development, RESTful API design, payment gateway integration, 
-          and enterprise ERP solutions. Hire the best freelance PHP Laravel developer for scalable web applications, 
-          backend development, and database-driven solutions. Expert in MySQL, PostgreSQL, JavaScript, React, Tailwind CSS, 
-          and Microsoft Azure. Available for freelance projects worldwide. Best freelance developer in Kerala with experience 
-          in fintech applications, HR management systems, NFC business card platforms, and resort booking systems.</p>
-          <h2>Services: PHP Development, Laravel Development, Full Stack Development, REST API Development, 
-          Payment Gateway Integration, ERP Development, Freelance Web Development, Backend Development</h2>
-          <p>Looking for the best PHP developer in India? Nihal Ali offers senior-level Laravel development services 
-          including custom web application development, API integration, database optimization, and cloud deployment. 
-          Top-rated freelance developer specializing in PHP Laravel framework with proven experience building 
-          production-ready enterprise applications.</p>
+          <h1>Nihal Ali - Backend Engineer | PHP Laravel Developer | Kerala India</h1>
+          <p>Nihal Ali is a Backend Engineer architecting production-grade PHP/Laravel 
+          applications for fintech, ERP, and enterprise clients across India and the Gulf region. Specializing in 
+          scalable REST API design, secure payment-gateway integration, database optimization, and hardware/IoT 
+          integration. Expert in MySQL, PostgreSQL, Redis, Docker, CI/CD, Microsoft Azure, and Linux server 
+          administration. Demonstrated leadership in mentoring junior developers and driving code-quality standards.</p>
+          <h2>Expertise: Backend Engineering, PHP Laravel Development, REST API Architecture, Payment Gateway Integration, 
+          IoT Integration, Database Optimization, Docker, CI/CD, Microsoft Azure, Team Mentoring</h2>
+          <p>Backend Engineer specializing in PHP Laravel framework with proven experience building production-ready 
+          enterprise applications including HRMS, learning platforms, repair shop management, and resort booking systems. 
+          Available for senior backend roles and enterprise projects across India, UAE, and USA.</p>
         </div>
 
         <section
           className="hero min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-10 md:py-16 lg:py-0 hero-section-padding"
           style={{ paddingTop: "var(--hero-padding-top, 0)" }}
-          aria-label="Nihal Ali - Best PHP Laravel Developer Portfolio"
+          aria-label="Nihal Ali - Backend Engineer Portfolio"
         >
           <div className="absolute inset-0"></div>
 
@@ -193,10 +193,10 @@ const profile = {
 
               {/* Welcome badge */}
               <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 mb-6 sm:mb-8 animate__animated animate__fadeInDown animate__delay-1s">
-                <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
-                {/* <span className="text-gray-300 text-xs sm:text-sm font-medium">
-                  Welcome to my universe
-                </span> */}
+                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+                <span className="text-gray-300 text-xs sm:text-sm font-medium">
+                  Available for senior backend roles
+                </span>
               </div>
 
               {/* Name section */}
@@ -228,8 +228,8 @@ const profile = {
               {/* Description */}
               <div className="relative mb-8 sm:mb-12 max-w-xl">
                 <p className="text-base sm:text-xl text-gray-300/90 leading-relaxed">
-                  Results-driven Software Developer 🚀 | PHP & Laravel Specialist 🔧 | Building
-                  scalable web applications & RESTful APIs 💻✨
+                  Architecting secure, high-performance backend systems for fintech, ERP &
+                  enterprise clients across India and the Gulf region.
                 </p>
               </div>
 
@@ -237,12 +237,12 @@ const profile = {
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate__animated animate__fadeInUp animate__delay-2s">
                 {/* View Projects Button */}
                 <a
-                  href="https://www.linkedin.com/in/nihal-ali-a72784235"
+                  href="/projects"
                   className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-teal-400 p-0.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
                 >
                   <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-teal-400">
                     <span className="relative flex items-center justify-center gap-2 text-white font-medium">
-                      <span>Learn More</span>
+                      <span>View Projects</span>
                       <i className="fas fa-arrow-right transform transition-all duration-300 group-hover:translate-x-1"></i>
                     </span>
                   </span>
@@ -268,18 +268,17 @@ const profile = {
               {/* Floating badges */}
               <div className="hidden lg:block absolute left-[5.5rem] top-[2.3rem] animate-float-slow">
                 <div className="px-4 py-2 rounded-lg bg-purple-500/10 backdrop-blur-sm border border-purple-500/20 text-purple-400">
-                  <i className="fas fa-wand-magic-sparkles"></i>&nbsp;&nbsp;Laravel
-                  Magic
+                  <i className="fas fa-server"></i>&nbsp;&nbsp;Scalable APIs
                 </div>
               </div>
               <div className="hidden lg:block absolute right-10 top-20 animate-float">
                 <div className="px-4 py-2 rounded-lg bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 text-blue-400">
-                  <i className="fas fa-code"></i>&nbsp;&nbsp;Clean Code
+                  <i className="fas fa-shield-halved"></i>&nbsp;&nbsp;Secure Architecture
                 </div>
               </div>
               <div className="hidden lg:block absolute top-[17rem] left-[70%] transform -translate-x-1/2 animate-float">
                 <div className="px-4 py-2 rounded-lg bg-amber-500/10 backdrop-blur-sm border border-amber-500/20 text-amber-400">
-                  <i className="fas fa-lightbulb"></i>&nbsp;&nbsp;Innovation
+                  <i className="fas fa-users"></i>&nbsp;&nbsp;Team Leadership
                 </div>
               </div>
             </div>

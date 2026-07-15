@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nihal Ali - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: 8.5in 11in;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 10.5pt;
+            line-height: 1.3;
+            color: #000;
+            background: #f5f5f5;
+        }
+
+        .resume {
+            width: 8.5in;
+            min-height: 11in;
+            margin: 0 auto;
+            padding: 0.35in 0.5in;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .header h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-top: -6px;
+            margin-bottom: 2px;
+        }
+
+        .contact-info {
+            font-size: 9pt;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            line-height: 1.4;
+        }
+
+        .contact-info a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .contact-info span {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        /* Section */
+        .section {
+            margin-top: 8px;
+        }
+
+        .section-title {
+            font-size: 11.5pt;
+            font-weight: bold;
+            border-bottom: 1.5px solid #000;
+            padding-bottom: 1px;
+            margin-bottom: 4px;
+        }
+
+        /* Entry row */
+        .entry {
+            margin-bottom: 5px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .entry-title {
+            font-weight: bold;
+            font-size: 10.5pt;
+        }
+
+        .entry-date {
+            font-size: 10.5pt;
+            white-space: nowrap;
+        }
+
+        .entry-subtitle {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10pt;
+            margin-bottom: 2px;
+        }
+
+        /* Bullet list */
+        .entry ul {
+            margin-left: 16px;
+            margin-top: 1px;
+        }
+
+        .entry ul li {
+            margin-bottom: 0;
+            font-size: 10pt;
+        }
+
+        /* Career summary paragraph */
+        .summary-text {
+            text-align: justify;
+            font-size: 10pt;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .resume {
+                box-shadow: none;
+                margin: 0;
+                padding: 0.35in 0.5in;
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume">
+        <!-- Header -->
+        <div class="header">
+            <h1>Nihal Ali</h1>
+            <p style="font-size: 10pt; letter-spacing: 2px; margin-bottom: 4px;">PHP LARAVEL DEVELOPER</p>
+            <div class="contact-info">
+                <span>&#9742; +91 6282981209</span>
+                <span>&#9993; <a href="mailto:nihalali1967@gmail.com">nihalali1967@gmail.com</a></span>
+                <span>&#127760; <a href="https://nihalali-portfolio.vercel.app/">www.nihalali-portfolio.com</a></span>
+            </div>
+            <div class="contact-info">
+                <span>&#128101; <a
+                        href="https://linkedin.com/in/nihal-ali-v-a72784235">linkedin.com/in/nihal-ali-v-a72784235</a></span>
+                <span>&#128736; <a href="https://github.com/Nihalali1967">github.com/Nihalali1967</a></span>
+                <span>&#128205; Malappuram, Kerala</span>
+            </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="section">
+            <div class="section-title">Profile</div>
+            <p class="summary-text">
+                Backend Engineer with nearly 3+ years of hands-on experience architecting and delivering
+                production-grade
+                PHP/Laravel applications for fintech, ERP, and enterprise clients across India and the Gulf region.
+                Specializes
+                in scalable REST API design, secure payment-gateway integration, database optimization, and
+                hardware/IoT
+                integration. Demonstrated leadership in mentoring junior developers, driving code-quality standards,
+                and
+                owning end-to-end feature delivery from architecture to deployment. Seeking to leverage strong backend
+                expertise and cross-functional collaboration skills in a engineering role within international
+                (India, UAE, USA) product teams.
+            </p>
+
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <div class="section-title">Skills</div>
+            <div class="entry">
+                <p><strong>Backend:</strong> PHP, Laravel, RESTful &amp; JSON API Design, MVC &amp;
+                    Service-Oriented Architecture, Authentication (Sanctum/Passport/JWT), Authorization &amp; RBAC,
+                    Queues &amp; Background Jobs, Event-Driven Architecture</p>
+                <p><strong>Frontend:</strong> Laravel Blade, Livewire, HTML5, CSS3, Tailwind CSS, Bootstrap,
+                    JavaScript (ES6+), jQuery, AJAX, React (Basic)</p>
+                <p><strong>Database:</strong> MySQL, PostgreSQL, Database Design &amp; Normalization, Query
+                    Optimization, Indexing, Eloquent ORM, Migrations &amp; Seeding, Redis (Caching)</p>
+                <p><strong>DevOps &amp; Cloud:</strong> Git/GitHub/GitLab, CI/CD Pipelines, Docker, Linux Server
+                    Administration, Microsoft Azure, cPanel, Nginx/Apache, Deployment Automation, SSL &amp; Server
+                    Hardening</p>
+                <p><strong>Integrations:</strong> Payment Gateways (Razorpay, Stripe), Third-Party APIs, Webhooks,
+                    Hardware/IoT Device Integration, SMS &amp; Email Services</p>
+                <p><strong>Practices:</strong> Code Review, SOLID Principles, Design Patterns, Unit Testing (PHPUnit),
+                    API Documentation (Postman/Swagger), Agile/Scrum, Mentoring &amp; Team Leadership</p>
+                <p><strong>Languages:</strong> English, Malayalam, Hindi</p>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Eranad Knowledge City</span>
+                    <span class="entry-date">2020 &ndash; 2023</span>
+                </div>
+                <div class="entry-subtitle">
+                    <span>University of Calicut</span>
+                </div>
+                <div style="font-size: 10pt;">
+                    BSc Computer Science
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="section">
+            <div class="section-title">Work Experience</div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">
+                        <a href="https://www.d5ndigital.com/" target="_blank"
+                            style="text-decoration: none; color: #000;">
+                            D-FINE DIGITAL LLP | Kottakal
+                        </a>
+                    </span>
+                    <span class="entry-date">Jan 2024 &ndash; Present</span>
+                </div>
+                <div class="entry-subtitle">
+                    <span>PHP Laravel Developer</span>
+                </div>
+                <ul>
+                    <li>Lead backend engineer for fintech and enterprise applications, owning architecture, code
+                        quality, and end-to-end delivery of scalable Laravel modules.</li>
+                    <li>Architected and shipped secure, well-documented RESTful APIs consumed by web and Android
+                        clients, enforcing consistent contracts and versioning.</li>
+                    <li>Designed and integrated payment-gateway workflows (transaction processing, reconciliation,
+                        idempotency, and failure handling) with a focus on security and reliability.</li>
+                    <li>Built real-time hardware/IoT device integration for live data communication between physical
+                        devices and cloud services.</li>
+                    <li>Mentored junior developers through code reviews, pair programming, and technical guidance;
+                        established coding standards and best practices across the team.</li>
+                    <li>Drove performance optimization, query tuning, and debugging initiatives that improved
+                        response times and stability of production systems.</li>
+                    <li>Collaborated cross-functionally with frontend, mobile, QA, and product teams to deliver
+                        complex features on schedule.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">
+                        <a href="https://www.natmcotech.com/" target="_blank"
+                            style="text-decoration: none; color: #000;">
+                            NATMCO SOLUTION PVT LLP | Malappuram
+                        </a>
+                    </span>
+                    <span class="entry-date">Sep 2023 &ndash; Nov 2024</span>
+                </div>
+                <div class="entry-subtitle">
+                    <span>PHP Laravel Developer</span>
+                </div>
+                <ul>
+                    <li>Engineered ERP-based web applications using Laravel and Core PHP, delivering robust backend
+                        services for complex business workflows.</li>
+                    <li>Designed and maintained REST APIs powering core business modules, ensuring reliability and
+                        clean data contracts.</li>
+                    <li>Developed full-stack features using Laravel Blade, integrating backend logic with responsive
+                        frontend UI.</li>
+                    <li>Configured cloud services and CI/CD deployment workflows on Microsoft Azure, streamlining
+                        release cycles.</li>
+                    <li>Partnered with QA and frontend teams to maintain high-quality, stable production releases.</li>
+                    <li>Optimized database queries and refactored legacy modules to improve maintainability and
+                        performance.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Key Projects -->
+        <div class="section">
+            <div class="section-title">Key Projects</div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Finkey &ndash; HRMS &amp; Workforce Management Platform</span>
+                </div>
+                <div class="entry-subtitle">
+                    <span>Laravel, MySQL, REST API, Sanctum, Biometric/IoT Integration, Mobile API</span>
+                </div>
+                <ul>
+                    <li>Architected the complete backend for an enterprise HRMS handling employee management, payroll,
+                        attendance, leave, performance, asset, and task/project modules.</li>
+                    <li>Integrated biometric device data synchronization and geofencing for real-time attendance
+                        tracking across branches.</li>
+                    <li>Designed role &amp; permission management (RBAC), shift/holiday scheduling, and automated
+                        payroll calculation workflows.</li>
+                    <li>Built REST APIs for web and mobile applications, with queue jobs for notifications and
+                        scheduled report generation.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">SkilzHub &ndash; Digital Learning &amp; Training Platform</span>
+                </div>
+                <div class="entry-subtitle">
+                    <span>Laravel, MySQL, REST API, Payment Integration, Queue Jobs, Email Automation</span>
+                </div>
+                <ul>
+                    <li>Developed backend for an education platform managing student admissions, courses, batches,
+                        internships, certifications, and placement assistance.</li>
+                    <li>Implemented certificate verification APIs, attendance system, and student/trainer dashboard
+                        APIs.</li>
+                    <li>Integrated payment gateway for course fees and automated email notifications for admissions,
+                        events, and certification.</li>
+                    <li>Built admin panel and CMS backend with optimized database design and full API documentation.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">ServeEazy &ndash; Repair Shop Management Software</span>
+                </div>
+                <div class="entry-subtitle">
+                    <span>Laravel, MySQL, REST API, SMS/Email Integration, CRM, Invoice &amp; Billing</span>
+                </div>
+                <ul>
+                    <li>Engineered a multi-tenant repair shop management platform for mobile, laptop, electronics, and
+                        watch service centers.</li>
+                    <li>Built repair ticket workflow, technician assignment, job status tracking, and customer CRM
+                        APIs.</li>
+                    <li>Implemented inventory &amp; spare parts module, invoice generation, payment processing, and
+                        SMS/email notifications.</li>
+                    <li>Designed user roles &amp; permissions, API security, and performance-optimized reporting for
+                        multi-user access.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

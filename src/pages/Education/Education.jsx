@@ -24,16 +24,6 @@ const EducationSection = () => {
       description:
         "Completed Bachelor of Science in Computer Science with relevant coursework in Programming, Database Management, and Web Development.",
     },
-    {
-      degree: "Internship — Software Development",
-      school: "KKM-SOFT Pvt Ltd",
-      mascot: "💻",
-      year: "Apr 2023 - Sep 2023",
-      achievements: ["Industrial Training", "Real-world Projects"],
-      skills: ["PHP", "JavaScript", "React", "Laravel", "Git"],
-      description:
-        "Completed hands-on industrial training in PHP, JavaScript, and React through real-world project assignments. Learned software development best practices, version control, and team collaboration workflows.",
-    },
   ];
 
   const containerVariants = {

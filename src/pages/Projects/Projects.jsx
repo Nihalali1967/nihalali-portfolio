@@ -2,50 +2,121 @@ import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import finkey from "@/assets/images/finkey.png";
-import skyerp from "@/assets/images/skyerp.png";
-import wasla from "@/assets/images/wasla.png";
-import dhabab from "@/assets/images/dhabab.png";
 
 const projects = [
-   {
-    title: "Finkey - HR Management System",
-    description: "Comprehensive HR platform with Laravel backend featuring daily attendance tracking, employee management, payroll processing, performance targets, and workforce analytics.",
-    src: finkey,
-    link: "https://finkey.io/",
+  {
+    title: "Finkey – HRMS & Workforce Management Platform",
+    overview: "Finkey is a complete HR Management System that helps companies manage their entire workforce lifecycle — from attendance and payroll to performance and asset tracking.",
+    features: [
+      "Employee Management", "Attendance & Biometric Integration", "Payroll",
+      "Leave Management", "Geofencing", "Performance Management",
+      "Asset Management", "Task & Project Management", "Role & Permission Management",
+      "Mobile Applications", "Reports & Analytics",
+    ],
+    contributions: [
+      "REST API development for Web & Mobile applications",
+      "Authentication & Authorization (Sanctum/Passport/JWT)",
+      "Employee Management module",
+      "Attendance & biometric machine data synchronization",
+      "Payroll calculation logic",
+      "Leave approval workflows",
+      "Department & Designation management",
+      "Branch Management",
+      "Shift & Holiday Management",
+      "Role & Permission Management",
+      "Notification APIs",
+      "Database design and optimization",
+      "Report generation",
+      "Queue Jobs & Scheduled Tasks",
+      "Third-party integrations",
+      "Bug fixing & production support",
+      "Client-specific customizations",
+      "Performance optimization",
+    ],
     color: "#ed649e",
-    githubLink: "#",
-    liveLink: "https://finkey.io/",
   },
-   {
-    title: "SkyERP - Complete Accounting Software",
-    description: "Full-featured ERP system built with Laravel for account management, sales tracking, financial reporting, invoicing, inventory control, and business accounting automation.",
-    src: skyerp,
-    link: "https://skyerp.skysecretary.com/",
+  {
+    title: "SkilzHub – Digital Learning Platform",
+    overview: "SkilzHub is an education platform offering courses, internships, certifications, and placement assistance with full student and trainer management.",
+    features: [
+      "Student Admissions", "Course Management", "Internship Programs",
+      "Certification", "Placement Assistance", "Student Login",
+      "Certificate Verification", "Event Management", "Web Development (Laravel) Training",
+    ],
+    contributions: [
+      "Student Registration APIs",
+      "Login & Authentication",
+      "Course Management",
+      "Batch Management",
+      "Trainer Management",
+      "Student Dashboard APIs",
+      "Certificate Verification APIs",
+      "Attendance System",
+      "Placement Module",
+      "Payment Integration",
+      "Notification System",
+      "CMS Backend",
+      "Admin Panel Development",
+      "Database Optimization",
+      "API Documentation",
+      "Laravel Queue Jobs",
+      "Email Automation",
+    ],
     color: "#34d399",
-    githubLink: "#", 
-    liveLink: "https://skyerp.skysecretary.com/",
   },
   {
-    title: "Wasla Pro - NFC Business Card Platform",
-    description: "NFC-powered digital business card solution built with Laravel, featuring business profile management, website integration, contact sharing via NFC tap, and dynamic QR code generation.",
-    src: wasla,
-    link: "https://wasla.pro/",
+    title: "ServeEazy – Repair Shop Management Software",
+    overview: "ServeEazy is a multi-tenant repair shop management platform for mobile, laptop, electronics, and watch service centers with full job ticket and CRM workflows.",
+    features: [
+      "Job Ticket Management", "Customer CRM", "Inventory",
+      "Accounts", "Billing", "SMS & Email",
+      "Reports", "Multi-user Access", "Workflow Management",
+    ],
+    contributions: [
+      "Repair Ticket APIs",
+      "Customer Management",
+      "Inventory Management",
+      "Spare Parts Module",
+      "Invoice Generation",
+      "Payment Module",
+      "Technician Assignment",
+      "Job Status Workflow",
+      "CRM APIs",
+      "Reports",
+      "SMS Integration",
+      "Email Notifications",
+      "User Roles & Permissions",
+      "Database Design",
+      "API Security",
+      "Performance Optimization",
+    ],
     color: "#5196fd",
-    githubLink: "#",
-    liveLink: "https://wasla.pro/",
   },
   {
-    title: "Dhababbay Resorts - Resort Booking System",
-    description: "Complete resort management platform with Laravel backend, real-time room booking engine, payment gateway integration, availability calendar, and responsive booking interface.",
-    src: dhabab, 
-    link: "https://www.dhababbayresorts.com/",
+    title: "Dhababbay Resorts – Resort Booking System",
+    overview: "Dhababbay Resorts is a complete resort management and room booking platform with real-time availability, secure payment processing, and an intuitive booking interface.",
+    features: [
+      "Room Booking Engine", "Real-time Availability", "Payment Gateway Integration",
+      "Availability Calendar", "Room & Category Management", "Guest Management",
+      "Booking Management", "Invoice & Billing", "Reviews & Ratings",
+      "Responsive Booking Interface",
+    ],
+    contributions: [
+      "Room booking REST API development",
+      "Real-time availability & pricing engine",
+      "Payment gateway integration (Razorpay/Stripe)",
+      "Room & category management APIs",
+      "Guest management & authentication",
+      "Booking workflow & status tracking",
+      "Invoice generation & billing",
+      "Database design & optimization",
+      "Notification system (SMS & Email)",
+      "Admin panel backend",
+      "API security & role-based access",
+      "Performance optimization",
+    ],
     color: "#8f89ff",
-    githubLink: "#",
-    liveLink: "https://www.dhababbayresorts.com/",
   },
- 
- 
 ];
 
 
@@ -110,16 +181,14 @@ export default function Projects() {
               <Card
                 key={`p_${i}`}
                 i={i}
-                url={project.link}
-                image={project.src}
                 title={project.title}
+                overview={project.overview}
+                features={project.features}
+                contributions={project.contributions}
                 color={project.color}
-                description={project.description}
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
-                githubLink={project.githubLink}
-                liveLink={project.liveLink}
               />
             );
           })}
@@ -132,15 +201,13 @@ export default function Projects() {
 function Card({
   i,
   title,
-  description,
-  url,
-  image,
+  overview,
+  features,
+  contributions,
   color,
   progress,
   range,
   targetScale,
-  githubLink,
-  liveLink,
 }) {
   const container = useRef(null);
   const scale = useTransform(progress, range, [1, targetScale]);
@@ -178,119 +245,60 @@ function Card({
           transition: { duration: 0.3 },
         }}
       >
-        {/* Modern split card design */}
-        <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-xl">
-          {/* Image section - full width on mobile, 55% on desktop */}
-          <div className="w-full md:w-[55%] h-[200px] sm:h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden">
-            <motion.img
-              src={image}
-              alt={title}
-              className="w-full h-full object-cover"
-              initial={{ scale: 1 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.4 }}
-            />
+        <div className="w-full bg-zinc-900 rounded-2xl overflow-hidden shadow-xl p-6 md:p-10 lg:p-12 max-h-[90vh] overflow-y-auto">
+          {/* Project number badge */}
+          <div className="inline-block bg-black/50 backdrop-blur-md text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium mb-4">
+            Project {i + 1}
+          </div>
 
-            {/* Colored overlay on hover */}
-            <motion.div
-              className="absolute inset-0"
-              style={{ backgroundColor: color, mixBlendMode: "overlay" }}
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 0.3 }}
-              transition={{ duration: 0.3 }}
+          {/* Accent line */}
+          <div className="flex items-center gap-3 mb-4">
+            <div
+              className="w-3 h-3 rounded-full"
+              style={{ backgroundColor: color }}
             />
+            <div className="h-[1px] w-16 md:w-24" style={{ backgroundColor: color, opacity: 0.4 }} />
+          </div>
 
-            {/* Project number */}
-            <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-black/50 backdrop-blur-md text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium">
-              Project {i + 1}
+          {/* Title */}
+          <h2 className="text-lg md:text-2xl lg:text-3xl font-bold text-white mb-3">
+            {title}
+          </h2>
+
+          {/* Overview */}
+          <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-6">
+            {overview}
+          </p>
+
+          {/* Features */}
+          <div className="mb-6">
+            <h3 className="text-xs md:text-sm font-semibold uppercase tracking-wider mb-3" style={{ color }}>
+              Platform Features
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {features.map((feature, idx) => (
+                <span
+                  key={idx}
+                  className="px-2.5 py-1 text-xs md:text-sm rounded-full bg-white/5 border border-white/10 text-gray-300"
+                >
+                  {feature}
+                </span>
+              ))}
             </div>
           </div>
 
-          {/* Content section - full width on mobile, 45% on desktop */}
-          <div className="w-full md:w-[45%] p-6 md:p-8 lg:p-10 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-3 mb-4 md:mb-6">
-                <div
-                  className="w-2 h-2 md:w-3 md:h-3 rounded-full"
-                  style={{ backgroundColor: color }}
-                />
-                <div className="h-[1px] w-12 md:w-20 bg-gray-600" />
-              </div>
-
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-4">
-                {title}
-              </h2>
-              <p className="text-sm md:text-base text-gray-400 leading-relaxed line-clamp-3 md:line-clamp-none max-w-md">
-                {description}
-              </p>
-            </div>
-
-            <div className="mt-4 md:mt-auto pt-4">
-              <div className="w-full h-[1px] bg-gray-800 mb-4 md:mb-6" />
-
-              <div className="flex items-center gap-4">
-                {/* GitHub Link */}
-                <motion.a
-                  href={githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2"
-                  whileHover={{ y: -3 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke={color}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                  </svg>
-                  <span
-                    className="text-xs md:text-sm font-medium"
-                    style={{ color }}
-                  >
-                    Code
-                  </span>
-                </motion.a>
-
-                {/* Live Link */}
-                <motion.a
-                  href={liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2"
-                  whileHover={{ y: -3 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke={color}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                  </svg>
-                  <span
-                    className="text-xs md:text-sm font-medium"
-                    style={{ color }}
-                  >
-                    Live
-                  </span>
-                </motion.a>
-              </div>
+          {/* Backend Contributions */}
+          <div>
+            <h3 className="text-xs md:text-sm font-semibold uppercase tracking-wider mb-3" style={{ color }}>
+              My Backend Contributions
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
+              {contributions.map((item, idx) => (
+                <div key={idx} className="flex items-start gap-2">
+                  <span className="mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
+                  <span className="text-xs md:text-sm text-gray-400 leading-relaxed">{item}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -299,16 +307,14 @@ function Card({
   );
 }
 
-// Add PropTypes validation
 Card.propTypes = {
   i: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired,
+  features: PropTypes.array.isRequired,
+  contributions: PropTypes.array.isRequired,
   color: PropTypes.string.isRequired,
   progress: PropTypes.object.isRequired,
   range: PropTypes.array.isRequired,
   targetScale: PropTypes.number.isRequired,
-  githubLink: PropTypes.string.isRequired,
-  liveLink: PropTypes.string.isRequired,
 };

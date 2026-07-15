@@ -58,29 +58,15 @@ const ExperienceSection = () => {
       title: "PHP Laravel Developer",
       company: "D-FINE DIGITAL LLP, Kottakal",
       period: "Jan 2024 - Present",
-      description: "Developed and maintained scalable backend modules using Laravel for fintech and enterprise applications. Designed and implemented RESTful APIs for mobile and web apps. Integrated secure payment gateways, handled transaction workflows, and implemented hardware device integration for real-time data communication.",
-    },
-    {
-    icon: Layers,
-    title: "Freelance PHP Laravel Developer",
-    company: "SKY SECRETARY",
-    period: "Sep 2025 - Present", 
-    description: "Full-stack development creating scalable web applications with seamless third-party API integrations including payment systems and authentication services.",
+      description: "Lead backend engineer for fintech and enterprise applications, owning architecture, code quality, and end-to-end delivery. Architected secure RESTful APIs for web and Android clients. Designed payment-gateway workflows with idempotency and failure handling. Built real-time hardware/IoT device integration. Mentored junior developers and established coding standards across the team.",
     },
     {
       icon: Code2,
-      title: "PHP Developer",
+      title: "PHP Laravel Developer",
       company: "NATMCO SOLUTION PVT LLP, Malappuram",
       period: "Sep 2023 - Nov 2024",
-      description: "Contributed to the development of ERP-based web applications using Laravel and Core PHP. Built and maintained backend services and REST APIs for business workflows. Integrated cloud services and deployment workflows using Microsoft Azure.",
+      description: "Engineered ERP-based web applications using Laravel and Core PHP, delivering robust backend services for complex business workflows. Designed and maintained REST APIs powering core business modules. Developed full-stack features using Laravel Blade. Configured cloud services and CI/CD deployment workflows on Microsoft Azure. Optimized database queries and refactored legacy modules.",
     },
-    // {
-    //   icon: Layers,
-    //   title: "Software Development Intern",
-    //   company: "KKM-SOFT Pvt Ltd",
-    //   period: "Apr 2023 - Sep 2023",
-    //   description: "Completed hands-on industrial training in PHP, JavaScript, and React through real-world project assignments. Assisted in developing modules and UI components as part of a development team.",
-    // },
   ];
 
   return (
