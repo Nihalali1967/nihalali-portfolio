@@ -42,8 +42,8 @@ const GridBackground = () => {
 
 export default function Hero() {
   const words = [
-    "Backend Engineer & PHP Laravel Specialist",
-    "Scalable REST API Design & Architecture",
+    "Full Stack PHP/Laravel Developer",
+    "Scalable Web Applications & REST APIs",
     "Payment Gateway Integration & IoT",
     "Mentoring & Team Leadership",
   ];
@@ -51,12 +51,14 @@ export default function Hero() {
   const [code] = useState(`
 const profile = {
     name: 'Nihal Ali',
-    title: 'Backend Engineer & PHP Laravel Developer',
+    title: 'Full Stack PHP/Laravel Developer',
     experience: 'Production-grade',
-    domains: ['Fintech', 'ERP', 'Enterprise', 'IoT'],
+    domains: ['Fintech', 'ERP', 'HRMS', 'Enterprise'],
     skills: [
-        'PHP', 'Laravel', 'RESTful APIs', 'MySQL', 'PostgreSQL',
-        'Redis', 'Docker', 'Azure', 'Payment Gateways',
+        'PHP', 'Laravel', 'Livewire', 'RESTful APIs',
+        'MySQL', 'PostgreSQL', 'Redis', 'JavaScript',
+        'React', 'Tailwind CSS', 'Bootstrap',
+        'Docker', 'Azure', 'Payment Gateways',
         'IoT Integration', 'Code Review', 'Mentoring'
     ],
     practices: [
@@ -139,23 +141,22 @@ const profile = {
       <main className="bg-[#020617] text-white min-h-screen">
         {/* SEO-rich hidden content for search engine crawlers */}
         <div className="sr-only" aria-hidden="false">
-          <h1>Nihal Ali - Backend Engineer | PHP Laravel Developer | Kerala India</h1>
-          <p>Nihal Ali is a Backend Engineer architecting production-grade PHP/Laravel 
-          applications for fintech, ERP, and enterprise clients across India and the Gulf region. Specializing in 
-          scalable REST API design, secure payment-gateway integration, database optimization, and hardware/IoT 
-          integration. Expert in MySQL, PostgreSQL, Redis, Docker, CI/CD, Microsoft Azure, and Linux server 
-          administration. Demonstrated leadership in mentoring junior developers and driving code-quality standards.</p>
-          <h2>Expertise: Backend Engineering, PHP Laravel Development, REST API Architecture, Payment Gateway Integration, 
+          <h1>Nihal Ali - Full Stack Developer | PHP Laravel Developer | Kerala India</h1>
+          <p>Nihal Ali is a Full Stack PHP/Laravel Developer experienced in building scalable web applications
+          for fintech, ERP, HRMS, and enterprise solutions. Specializing in Laravel, REST APIs, MySQL, JavaScript,
+          React, Livewire, payment integrations, and responsive web development. Expert in MySQL, PostgreSQL, Redis,
+          Docker, CI/CD, Microsoft Azure, and Linux server administration.</p>
+          <h2>Expertise: Full Stack Development, PHP Laravel, REST API Architecture, Payment Gateway Integration,
           IoT Integration, Database Optimization, Docker, CI/CD, Microsoft Azure, Team Mentoring</h2>
-          <p>Backend Engineer specializing in PHP Laravel framework with proven experience building production-ready 
-          enterprise applications including HRMS, learning platforms, repair shop management, and resort booking systems. 
-          Available for senior backend roles and enterprise projects across India, UAE, and USA.</p>
+          <p>Full Stack Developer specializing in PHP Laravel framework with proven experience building production-ready
+          enterprise applications including HRMS, learning platforms, repair shop management, and restaurant ordering
+          systems. Available for full stack roles and enterprise projects across India and worldwide.</p>
         </div>
 
         <section
           className="hero min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-10 md:py-16 lg:py-0 hero-section-padding"
           style={{ paddingTop: "var(--hero-padding-top, 0)" }}
-          aria-label="Nihal Ali - Backend Engineer Portfolio"
+          aria-label="Nihal Ali - Full Stack Developer Portfolio"
         >
           <div className="absolute inset-0"></div>
 
@@ -195,7 +196,7 @@ const profile = {
               <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 mb-6 sm:mb-8 animate__animated animate__fadeInDown animate__delay-1s">
                 <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
                 <span className="text-gray-300 text-xs sm:text-sm font-medium">
-                  Available for senior backend roles
+                  Available for full stack developer roles
                 </span>
               </div>
 
@@ -228,8 +229,8 @@ const profile = {
               {/* Description */}
               <div className="relative mb-8 sm:mb-12 max-w-xl">
                 <p className="text-base sm:text-xl text-gray-300/90 leading-relaxed">
-                  Architecting secure, high-performance backend systems for fintech, ERP &
-                  enterprise clients across India and the Gulf region.
+                  Building scalable web applications for fintech, ERP, HRMS &
+                  enterprise clients using PHP, Laravel, MySQL, JavaScript & React.
                 </p>
               </div>
 
@@ -268,12 +269,12 @@ const profile = {
               {/* Floating badges */}
               <div className="hidden lg:block absolute left-[5.5rem] top-[2.3rem] animate-float-slow">
                 <div className="px-4 py-2 rounded-lg bg-purple-500/10 backdrop-blur-sm border border-purple-500/20 text-purple-400">
-                  <i className="fas fa-server"></i>&nbsp;&nbsp;Scalable APIs
+                  <i className="fas fa-layer-group"></i>&nbsp;&nbsp;Full Stack
                 </div>
               </div>
               <div className="hidden lg:block absolute right-10 top-20 animate-float">
                 <div className="px-4 py-2 rounded-lg bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 text-blue-400">
-                  <i className="fas fa-shield-halved"></i>&nbsp;&nbsp;Secure Architecture
+                  <i className="fas fa-code"></i>&nbsp;&nbsp;PHP & Laravel
                 </div>
               </div>
               <div className="hidden lg:block absolute top-[17rem] left-[70%] transform -translate-x-1/2 animate-float">

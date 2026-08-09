@@ -6,7 +6,7 @@ export default function About() {
       <section id="about" className="py-16 md:py-32  text-white bg-[#04081A]">
         <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
           <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl text-white">
-            Backend Engineer, PHP Laravel Specialist, API Architect
+            Full Stack Developer, PHP Laravel Specialist, API Architect
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
             <div className="relative mb-6 sm:mb-0">
@@ -23,21 +23,21 @@ export default function About() {
 
             <div className="relative space-y-4">
               <p className="text-white">
-                Hello! I'm Nihal Ali, a Backend Engineer{" "}
+                Hello! I'm Nihal Ali, a{" "}
                 <span className="font-bold text-white">
-                  architecting and delivering production-grade
+                  Full Stack PHP/Laravel Developer
                 </span>{" "}
-                PHP/Laravel applications for
-                fintech, ERP, and enterprise clients across India and the Gulf region.
-                I specialize in scalable REST API design, secure payment-gateway integration,
-                database optimization, and hardware/IoT integration.
+                experienced in building scalable web applications for fintech, ERP,
+                HRMS, and enterprise solutions. I specialize in Laravel, REST APIs,
+                MySQL, JavaScript, React, Livewire, payment integrations, and
+                responsive web development.
               </p>
               <p className="text-white">
-                I have demonstrated leadership in mentoring junior developers, driving
-                code-quality standards, and owning end-to-end feature delivery from
-                architecture to deployment. Proficient in Laravel, MySQL, PostgreSQL,
-                Redis, Docker, CI/CD, Microsoft Azure, and Linux server administration.
-                I emphasize SOLID principles, design patterns, and clean, maintainable code.
+                I'm experienced in developing secure, maintainable applications,
+                optimizing performance, and delivering features end-to-end. Proficient
+                in Laravel, MySQL, PostgreSQL, Redis, Docker, CI/CD, Microsoft Azure,
+                and Linux server administration, with a strong emphasis on SOLID
+                principles, design patterns, and clean, maintainable code.
               </p>
 
               <div className="pt-6">
@@ -51,7 +51,7 @@ export default function About() {
 
                   <div className="mt-6 space-y-3">
                     <cite className="block font-medium text-white">
-                      Nihal Ali — Backend Engineer
+                      Nihal Ali — Full Stack Developer
                     </cite>
                     <div className="flex items-center gap-2">
                       <span className="text-teal-400 text-lg">⚡</span>

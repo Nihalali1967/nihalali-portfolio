@@ -2,10 +2,12 @@ import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
     title: "Finkey – HRMS & Workforce Management Platform",
+    link: "https://finkey.io/",
     overview: "Finkey is a complete HR Management System that helps companies manage their entire workforce lifecycle — from attendance and payroll to performance and asset tracking.",
     features: [
       "Employee Management", "Attendance & Biometric Integration", "Payroll",
@@ -37,6 +39,7 @@ const projects = [
   },
   {
     title: "SkilzHub – Digital Learning Platform",
+    link: "https://skilzhub.org/",
     overview: "SkilzHub is an education platform offering courses, internships, certifications, and placement assistance with full student and trainer management.",
     features: [
       "Student Admissions", "Course Management", "Internship Programs",
@@ -66,6 +69,7 @@ const projects = [
   },
   {
     title: "ServeEazy – Repair Shop Management Software",
+    link: "https://serveeazy.com/",
     overview: "ServeEazy is a multi-tenant repair shop management platform for mobile, laptop, electronics, and watch service centers with full job ticket and CRM workflows.",
     features: [
       "Job Ticket Management", "Customer CRM", "Inventory",
@@ -92,30 +96,56 @@ const projects = [
     ],
     color: "#5196fd",
   },
+  
   {
-    title: "Dhababbay Resorts – Resort Booking System",
-    overview: "Dhababbay Resorts is a complete resort management and room booking platform with real-time availability, secure payment processing, and an intuitive booking interface.",
+    title: "Dum Handi Biryani – Restaurant Ordering & Management Platform",
+    link: "https://www.dumhandibiryani.com/",
+    overview: "A scalable restaurant ordering platform supporting online orders, dine-in operations, table booking, menu management, catering, and multiple locations.",
     features: [
-      "Room Booking Engine", "Real-time Availability", "Payment Gateway Integration",
-      "Availability Calendar", "Room & Category Management", "Guest Management",
-      "Booking Management", "Invoice & Billing", "Reviews & Ratings",
-      "Responsive Booking Interface",
+      "Online Ordering", "Dine-in Operations", "Table Booking",
+      "Menu Management", "Catering", "Multi-Location Support",
+      "Order Tracking", "Billing",
     ],
     contributions: [
-      "Room booking REST API development",
-      "Real-time availability & pricing engine",
-      "Payment gateway integration (Razorpay/Stripe)",
-      "Room & category management APIs",
-      "Guest management & authentication",
-      "Booking workflow & status tracking",
-      "Invoice generation & billing",
-      "Database design & optimization",
-      "Notification system (SMS & Email)",
-      "Admin panel backend",
-      "API security & role-based access",
-      "Performance optimization",
+      "Laravel backend modules & REST APIs",
+      "Order processing & tracking",
+      "Customer management",
+      "Billing & reservations",
+      "Secure authentication & validation",
+      "Role-based access control",
+      "MySQL query optimization",
+      "Scalable business logic",
     ],
-    color: "#8f89ff",
+    color: "#f97316",
+  },
+  {
+    title: "Kuza – Business Website",
+    link: "https://www.kuza.co.in/",
+    overview: "A responsive business website showcasing company services and solutions, built with a focus on performance, SEO, usability, and cross-browser compatibility.",
+    features: [
+      "Responsive Design", "SEO Optimization", "Service Showcase", "Cross-Browser Compatibility",
+    ],
+    contributions: [
+      "Responsive front-end development",
+      "SEO optimization",
+      "Performance tuning",
+      "Cross-browser testing & fixes",
+    ],
+    color: "#22d3ee",
+  },
+  {
+    title: "Huebond – Business Website",
+    link: "https://www.huebond.com/",
+    overview: "A modern responsive corporate website showcasing products and services, focused on performance, user experience, and optimized web architecture.",
+    features: [
+      "Responsive Design", "Product Showcase", "Performance Optimization", "Modern UI/UX",
+    ],
+    contributions: [
+      "Modern responsive front-end development",
+      "Performance & UX optimization",
+      "Optimized web architecture",
+    ],
+    color: "#a78bfa",
   },
 ];
 
@@ -182,6 +212,7 @@ export default function Projects() {
                 key={`p_${i}`}
                 i={i}
                 title={project.title}
+                link={project.link}
                 overview={project.overview}
                 features={project.features}
                 contributions={project.contributions}
@@ -201,6 +232,7 @@ export default function Projects() {
 function Card({
   i,
   title,
+  link,
   overview,
   features,
   contributions,
@@ -261,9 +293,23 @@ function Card({
           </div>
 
           {/* Title */}
-          <h2 className="text-lg md:text-2xl lg:text-3xl font-bold text-white mb-3">
-            {title}
-          </h2>
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+            <h2 className="text-lg md:text-2xl lg:text-3xl font-bold text-white">
+              {title}
+            </h2>
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative z-20 inline-flex items-center gap-1.5 text-xs md:text-sm font-medium px-3 py-1.5 rounded-full border border-white/20 text-gray-200 hover:text-white hover:border-white/40 transition-colors whitespace-nowrap cursor-pointer"
+                style={{ backgroundColor: `${color}1a` }}
+              >
+                Visit Site
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
 
           {/* Overview */}
           <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-6">
@@ -310,6 +356,7 @@ function Card({
 Card.propTypes = {
   i: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
+  link: PropTypes.string,
   overview: PropTypes.string.isRequired,
   features: PropTypes.array.isRequired,
   contributions: PropTypes.array.isRequired,

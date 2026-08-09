@@ -16,13 +16,23 @@ const EducationSection = () => {
   const educationData = [
     {
       degree: "BSc Computer Science",
-      school: "Eranad Knowledge City — University of Calicut",
+      school: "University of Calicut",
       mascot: "🎓",
-      year: "2020 - 2023",
+      year: "2023",
       achievements: ["Computer Science Major", "Web Development Focus"],
       skills: ["Programming", "Database Management", "Web Development", "Data Structures", "Algorithms"],
       description:
         "Completed Bachelor of Science in Computer Science with relevant coursework in Programming, Database Management, and Web Development.",
+    },
+    {
+      degree: "Software Developer Certification",
+      school: "KKM SOFT PVT",
+      mascot: "📜",
+      year: "2023",
+      achievements: ["Full Stack Development", "Hands-on Project Training"],
+      skills: ["PHP", "Laravel", "MySQL", "JavaScript", "REST API"],
+      description:
+        "Completed professional certification in software development, focusing on full-stack web development and industry-standard coding practices.",
     },
   ];
 

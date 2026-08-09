@@ -55,17 +55,17 @@ const ExperienceSection = () => {
   const experiences = [
     {
       icon: Network,
-      title: "PHP Laravel Developer",
-      company: "D-FINE DIGITAL LLP, Kottakal",
-      period: "Jan 2024 - Present",
-      description: "Lead backend engineer for fintech and enterprise applications, owning architecture, code quality, and end-to-end delivery. Architected secure RESTful APIs for web and Android clients. Designed payment-gateway workflows with idempotency and failure handling. Built real-time hardware/IoT device integration. Mentored junior developers and established coding standards across the team.",
+      title: "Full Stack Developer",
+      company: "Dfine Digital Solutions, Malappuram",
+      period: "Nov 2024 - Present",
+      description: "Led full-stack development of scalable fintech and enterprise applications using PHP, Laravel, MySQL, JavaScript, HTML, CSS, and Bootstrap, owning architecture and end-to-end delivery. Architected and developed secure, scalable RESTful APIs and integrated them with responsive web applications and Android clients, implementing authentication, authorization, validation, and API versioning. Designed and integrated payment gateways, real-time IoT/device communication, and complex business workflows, focusing on security, reliability, and performance. Optimized application performance through database query tuning and mentored developers.",
     },
     {
       icon: Code2,
-      title: "PHP Laravel Developer",
-      company: "NATMCO SOLUTION PVT LLP, Malappuram",
+      title: "Software Developer",
+      company: "Natmco Solutions, Malappuram",
       period: "Sep 2023 - Nov 2024",
-      description: "Engineered ERP-based web applications using Laravel and Core PHP, delivering robust backend services for complex business workflows. Designed and maintained REST APIs powering core business modules. Developed full-stack features using Laravel Blade. Configured cloud services and CI/CD deployment workflows on Microsoft Azure. Optimized database queries and refactored legacy modules.",
+      description: "Developed and maintained scalable backend applications using PHP, Laravel, MySQL, and RESTful APIs, focusing on clean architecture, performance, security, and maintainability. Architected and developed secure RESTful APIs for web and Android applications, implementing authentication, authorization, validation, API versioning, and reliable data processing. Designed and integrated payment gateway workflows, real-time IoT/device communication, background jobs, notifications, and complex business logic. Optimized database queries and mentored developers on Laravel best practices.",
     },
   ];
 
