@@ -59,7 +59,7 @@ const EducationSection = () => {
   };
 
   return (
-    <section className="min-h-screen relative overflow-hidden py-40 bg-[#04081A]">
+    <section className="min-h-screen relative overflow-hidden py-12 md:py-20 lg:py-28 bg-[#04081A]">
       {/* Grid Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:50px_50px]" />
@@ -72,14 +72,17 @@ const EducationSection = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="flex flex-col items-center space-y-4 mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
+            <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
+            <span className="text-xs text-gray-400 font-medium">Academic Background</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-center">
             Educational Journey
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Discover how academic excellence shapes innovative thinking and
-            professional growth.
+          <p className="text-gray-400 text-base md:text-lg text-center max-w-2xl">
+            Academic foundation and professional certifications in software development
           </p>
         </motion.div>
 
@@ -93,7 +96,7 @@ const EducationSection = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${
+              className={`relative border rounded-xl p-5 md:p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${
                 hoveredIndex === index
                   ? "border-teal-500 scale-[1.02]"
                   : "border-blue-400/20"

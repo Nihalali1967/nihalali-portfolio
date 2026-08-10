@@ -34,7 +34,7 @@ import { FaDocker, FaJira } from "react-icons/fa";
 const SkillCard = ({ icon: Icon, title, skills, color }) => (
   <Card className="group relative overflow-hidden bg-gray-900/80 border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(100,100,255,0.1)] to-transparent group-hover:via-[rgba(100,100,255,0.2)] animate-shimmer"></div>
-    <CardContent className="p-6 relative z-10">
+    <CardContent className="p-5 md:p-6 relative z-10">
       <div className="flex items-center gap-4 mb-6">
         <div
           className={`p-3 rounded-xl bg-gray-800/50 ${color} group-hover:scale-110 transition-transform duration-300`}
@@ -146,15 +146,29 @@ const SkillsSection = () => {
   ];
 
   return (
-    <main className="pt-15 lg:pt-0 text-white min-h-screen bg-[#04081A] relative">
+    <main className="pt-20 lg:pt-0 text-white min-h-screen bg-[#04081A] relative">
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
 
-      <section className="container mx-auto px-4 py-11 relative z-10">
-        <div className="flex justify-center items-center ">
+      <section className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
+        {/* Section header */}
+        <div className="flex flex-col items-center space-y-4 mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
+            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+            <span className="text-xs text-gray-400 font-medium">Technical Expertise</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-center">
+            Skills & Stack
+          </h2>
+          <p className="text-gray-400 text-base md:text-lg text-center max-w-2xl">
+            Technologies and tools I use to build production-grade applications
+          </p>
+        </div>
+
+        <div className="flex justify-center items-center mb-10">
           <IconCloudDemo />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
             <SkillCard
               key={index}

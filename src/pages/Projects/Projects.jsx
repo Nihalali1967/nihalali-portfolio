@@ -1,8 +1,6 @@
-import { ReactLenis } from "lenis/react";
-import { useTransform, motion, useScroll } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { ExternalLink, ChevronDown, Code2, Layers } from "lucide-react";
 
 const projects = [
   {
@@ -36,6 +34,7 @@ const projects = [
       "Performance optimization",
     ],
     color: "#ed649e",
+    icon: "💼",
   },
   {
     title: "SkilzHub – Digital Learning Platform",
@@ -66,6 +65,7 @@ const projects = [
       "Email Automation",
     ],
     color: "#34d399",
+    icon: "🎓",
   },
   {
     title: "ServeEazy – Repair Shop Management Software",
@@ -95,8 +95,8 @@ const projects = [
       "Performance Optimization",
     ],
     color: "#5196fd",
+    icon: "🔧",
   },
-  
   {
     title: "Dum Handi Biryani – Restaurant Ordering & Management Platform",
     link: "https://www.dumhandibiryani.com/",
@@ -117,6 +117,7 @@ const projects = [
       "Scalable business logic",
     ],
     color: "#f97316",
+    icon: "🍽️",
   },
   {
     title: "Kuza – Business Website",
@@ -132,6 +133,7 @@ const projects = [
       "Cross-browser testing & fixes",
     ],
     color: "#22d3ee",
+    icon: "🌐",
   },
   {
     title: "Huebond – Business Website",
@@ -146,186 +148,106 @@ const projects = [
       "Optimized web architecture",
     ],
     color: "#a78bfa",
+    icon: "⚡",
   },
 ];
 
-
-export default function Projects() {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"],
-  });
-
-  useEffect(() => {
-    // Add specific styles for 1366x768 resolution
-    const style = document.createElement("style");
-    style.textContent = `
-      @media screen and (width: 1366px) and (height: 768px),
-             screen and (width: 1367px) and (height: 768px),
-             screen and (width: 1368px) and (height: 769px) {
-        .project-card {
-          scale: 0.85;
-          margin-top: -5vh;
-        }
-        .project-container {
-          height: 90vh;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-
-    // Resolution check function
-    const checkResolution = () => {
-      const isTargetResolution =
-        window.innerWidth >= 1360 &&
-        window.innerWidth <= 1370 &&
-        window.innerHeight >= 760 &&
-        window.innerHeight <= 775;
-
-      if (isTargetResolution) {
-        document.documentElement.style.setProperty("--project-scale", "0.85");
-        document.documentElement.style.setProperty("--project-margin", "-5vh");
-      } else {
-        document.documentElement.style.setProperty("--project-scale", "1");
-        document.documentElement.style.setProperty("--project-margin", "0");
-      }
-    };
-
-    checkResolution();
-    window.addEventListener("resize", checkResolution);
-
-    return () => {
-      document.head.removeChild(style);
-      window.removeEventListener("resize", checkResolution);
-    };
-  }, []);
+function ProjectCard({ project, index }) {
+  const [expanded, setExpanded] = useState(false);
+  const color = project.color;
 
   return (
-    <ReactLenis root>
-      <main className="bg-black" ref={container}>
-        <section className="text-white w-full bg-slate-950">
-          {projects.map((project, i) => {
-            const targetScale = 1 - (projects.length - i) * 0.05;
-            return (
-              <Card
-                key={`p_${i}`}
-                i={i}
-                title={project.title}
-                link={project.link}
-                overview={project.overview}
-                features={project.features}
-                contributions={project.contributions}
-                color={project.color}
-                progress={scrollYProgress}
-                range={[i * 0.25, 1]}
-                targetScale={targetScale}
-              />
-            );
-          })}
-        </section>
-      </main>
-    </ReactLenis>
-  );
-}
-
-function Card({
-  i,
-  title,
-  link,
-  overview,
-  features,
-  contributions,
-  color,
-  progress,
-  range,
-  targetScale,
-}) {
-  const container = useRef(null);
-  const scale = useTransform(progress, range, [1, targetScale]);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return (
-    <div
-      ref={container}
-      className={`flex items-center justify-center ${
-        isMobile ? 'py-4' : 'h-screen sticky top-0'
-      } project-container`}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, delay: (index % 2) * 0.15 }}
+      className="group relative"
     >
-      <motion.div
-        style={
-          isMobile
-            ? {}
-            : {
-                scale,
-                top: `calc(-5vh + ${i * 25}px)`,
-                transform: `scale(var(--project-scale, 1))`,
-                marginTop: "var(--project-margin, 0)",
-              }
-        }
-        className={`relative h-auto w-[92%] md:w-[85%] lg:w-[75%] xl:w-[65%] origin-top project-card ${
-          isMobile ? '' : '-top-[25%]'
-        }`}
-        whileHover={{
-          y: -8,
-          transition: { duration: 0.3 },
-        }}
+      {/* Glow effect */}
+      <div
+        className="absolute -inset-0.5 rounded-2xl opacity-20 group-hover:opacity-40 blur-xl transition-opacity duration-500"
+        style={{ background: `linear-gradient(135deg, ${color}, transparent)` }}
+      />
+
+      {/* Card */}
+      <div
+        className="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-white/20 group-hover:shadow-2xl"
+        style={{ boxShadow: `0 0 0 0 ${color}00` }}
       >
-        <div className="w-full bg-zinc-900 rounded-2xl overflow-hidden shadow-xl p-6 md:p-10 lg:p-12 max-h-[90vh] overflow-y-auto">
-          {/* Project number badge */}
-          <div className="inline-block bg-black/50 backdrop-blur-md text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium mb-4">
-            Project {i + 1}
-          </div>
+        {/* Top accent bar */}
+        <div
+          className="h-1 w-full"
+          style={{ background: `linear-gradient(90deg, ${color}, ${color}40, transparent)` }}
+        />
 
-          {/* Accent line */}
-          <div className="flex items-center gap-3 mb-4">
-            <div
-              className="w-3 h-3 rounded-full"
-              style={{ backgroundColor: color }}
-            />
-            <div className="h-[1px] w-16 md:w-24" style={{ backgroundColor: color, opacity: 0.4 }} />
-          </div>
+        {/* Card body */}
+        <div className="p-5 md:p-6 lg:p-7">
+          {/* Header row: icon + number + visit link */}
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex items-center gap-3">
+              {/* Icon circle */}
+              <div
+                className="flex items-center justify-center w-11 h-11 rounded-xl text-xl flex-shrink-0"
+                style={{ backgroundColor: `${color}1a`, border: `1px solid ${color}30` }}
+              >
+                {project.icon}
+              </div>
+              {/* Project number */}
+              <div className="flex flex-col">
+                <span className="text-[10px] uppercase tracking-widest text-gray-500 font-medium">
+                  Project {String(index + 1).padStart(2, "0")}
+                </span>
+                <span
+                  className="text-xs font-semibold"
+                  style={{ color }}
+                >
+                </span>
+              </div>
+            </div>
 
-          {/* Title */}
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-            <h2 className="text-lg md:text-2xl lg:text-3xl font-bold text-white">
-              {title}
-            </h2>
-            {link && (
+            {/* Visit site link */}
+            {project.link && (
               <a
-                href={link}
+                href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative z-20 inline-flex items-center gap-1.5 text-xs md:text-sm font-medium px-3 py-1.5 rounded-full border border-white/20 text-gray-200 hover:text-white hover:border-white/40 transition-colors whitespace-nowrap cursor-pointer"
-                style={{ backgroundColor: `${color}1a` }}
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg border transition-all duration-300 hover:scale-105"
+                style={{
+                  borderColor: `${color}40`,
+                  color: color,
+                  backgroundColor: `${color}0d`,
+                }}
               >
-                Visit Site
+                <span className="hidden sm:inline">Visit Site</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             )}
           </div>
 
+          {/* Title */}
+          <h3 className="text-base md:text-lg font-bold text-white leading-snug mb-2 group-hover:text-white">
+            {project.title}
+          </h3>
+
           {/* Overview */}
-          <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-6">
-            {overview}
+          <p className="text-sm text-gray-400 leading-relaxed mb-5">
+            {project.overview}
           </p>
 
           {/* Features */}
-          <div className="mb-6">
-            <h3 className="text-xs md:text-sm font-semibold uppercase tracking-wider mb-3" style={{ color }}>
-              Platform Features
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {features.map((feature, idx) => (
+          <div className="mb-5">
+            <div className="flex items-center gap-1.5 mb-2.5">
+              <Layers className="w-3.5 h-3.5" style={{ color }} />
+              <span className="text-[11px] font-semibold uppercase tracking-wider" style={{ color }}>
+                Key Features
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {project.features.map((feature, idx) => (
                 <span
                   key={idx}
-                  className="px-2.5 py-1 text-xs md:text-sm rounded-full bg-white/5 border border-white/10 text-gray-300"
+                  className="px-2 py-0.5 text-[11px] md:text-xs rounded-md bg-white/5 border border-white/10 text-gray-300 transition-colors duration-200 hover:border-white/20"
                 >
                   {feature}
                 </span>
@@ -333,35 +255,103 @@ function Card({
             </div>
           </div>
 
-          {/* Backend Contributions */}
+          {/* Contributions - expandable with read more */}
           <div>
-            <h3 className="text-xs md:text-sm font-semibold uppercase tracking-wider mb-3" style={{ color }}>
-              My Backend Contributions
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
-              {contributions.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-2">
-                  <span className="mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
-                  <span className="text-xs md:text-sm text-gray-400 leading-relaxed">{item}</span>
+            <div className="flex items-center gap-1.5 mb-2.5">
+              <Code2 className="w-3.5 h-3.5" style={{ color }} />
+              <span className="text-[11px] font-semibold uppercase tracking-wider" style={{ color }}>
+                My Contributions
+              </span>
+              <span className="text-[10px] text-gray-500 ml-1">
+                ({project.contributions.length})
+              </span>
+            </div>
+
+            {/* Collapsed: show first 4 items */}
+            <div className="grid grid-cols-1 gap-x-3 gap-y-1">
+              {project.contributions.map((item, idx) => (
+                <div
+                  key={idx}
+                  className={`flex items-start gap-2 transition-all duration-300 ${
+                    expanded || idx < 4
+                      ? "opacity-100 max-h-20"
+                      : "opacity-0 max-h-0 overflow-hidden"
+                  }`}
+                >
+                  <span
+                    className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0"
+                    style={{ backgroundColor: color }}
+                  />
+                  <span className="text-xs text-gray-400 leading-relaxed">{item}</span>
                 </div>
               ))}
             </div>
+
+            {/* Read more / Show less button */}
+            {project.contributions.length > 4 && (
+              <button
+                onClick={() => setExpanded(!expanded)}
+                className="flex items-center gap-1 mt-3 text-xs font-medium transition-colors duration-200 cursor-pointer"
+                style={{ color }}
+              >
+                {expanded ? (
+                  <>
+                    Show Less
+                    <ChevronDown className="w-3.5 h-3.5 rotate-180" />
+                  </>
+                ) : (
+                  <>
+                    Read More ({project.contributions.length - 4} more)
+                    <ChevronDown className="w-3.5 h-3.5" />
+                  </>
+                )}
+              </button>
+            )}
           </div>
         </div>
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   );
 }
 
-Card.propTypes = {
-  i: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  link: PropTypes.string,
-  overview: PropTypes.string.isRequired,
-  features: PropTypes.array.isRequired,
-  contributions: PropTypes.array.isRequired,
-  color: PropTypes.string.isRequired,
-  progress: PropTypes.object.isRequired,
-  range: PropTypes.array.isRequired,
-  targetScale: PropTypes.number.isRequired,
-};
+export default function Projects() {
+  return (
+    <section className="min-h-screen bg-[#04081A] text-white py-12 md:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(50,50,70,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(50,50,70,0.1)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
+
+      {/* Background glows */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 md:mb-16"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-4">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-xs text-gray-400 font-medium">6 Live Projects</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text mb-3">
+            Featured Projects
+          </h2>
+          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
+            Production-grade applications built with PHP, Laravel, MySQL & JavaScript
+          </p>
+        </motion.div>
+
+        {/* Project grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+          {projects.map((project, i) => (
+            <ProjectCard key={i} project={project} index={i} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

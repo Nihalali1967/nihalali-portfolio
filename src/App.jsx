@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./assets/css/index.css";
 import Experience from "./pages/Experience/Experience";
 import Contact from "./pages/Contact/Contact";
@@ -9,36 +9,31 @@ import Skills from "./pages/Skills/Skills";
 import Education from "./pages/Education/Education";
 import SEOHead from "./components/SEOHead";
 
-import { Route, Routes } from "react-router-dom";
-
 export default function App() {
-  const [isOnePage, setIsOnePage] = useState(false); // Toggle state
-
   return (
     <>
       <SEOHead />
       <Header />
-      {/* Conditional Rendering */}
-      {isOnePage ? (
-        // One-Page Mode: Render all components together
-        <>
+      <main>
+        <div id="home">
           <Hero />
+        </div>
+        <div id="skills">
           <Skills />
+        </div>
+        <div id="experience">
           <Experience />
+        </div>
+        <div id="education">
           <Education />
+        </div>
+        <div id="projects">
+          <Projects />
+        </div>
+        <div id="contact">
           <Contact />
-        </>
-      ) : (
-        // Router Mode: Use routes for navigation
-        <Routes>`
-          <Route path="/" element={<Hero />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-      )}
+        </div>
+      </main>
     </>
   );
 }

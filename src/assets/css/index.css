@@ -119,31 +119,6 @@
   }
 }
 
-/* Enhanced Prism.js styling */
-pre[class*="language-"] {
-  background: #091121 !important;
-  padding: 1.5rem !important;
-  margin: 0 !important;
-  font-size: 0.95rem !important;
-}
-
-.token.comment {
-  color: #8b9cb3 !important;
-  font-style: italic;
-}
-
-.token.string {
-  color: #a5d6ff !important;
-}
-
-.token.keyword {
-  color: #ff79c6 !important;
-}
-
-.token.function {
-  color: #66e7ff !important;
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -206,6 +181,9 @@ pre[class*="language-"] {
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 /* Add these classes to adjust the grid colors in the top-left and bottom-right */

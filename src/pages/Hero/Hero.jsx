@@ -1,13 +1,10 @@
-import { useState, useEffect } from "react";
-import Prism from "prismjs";
-import "prismjs/components/prism-javascript";
-import "@/assets/css/tomorrow.css";
+import { useEffect } from "react";
 import Meteors from "@/components/ui/meteors";
 import PortfolioPage from "@/pages/About/About";
-import SparklesText from "@/components/ui/sparkles-text";
 import { FlipWords } from "@/components/ui/flip-words";
+import { Github, Linkedin, Mail, Phone, ArrowRight, Download, FileCode2, Wifi, Battery, MousePointerClick, ChevronDown } from "lucide-react";
 
-// Grid Background - Replacing the HexagonBackground
+// Grid Background
 const GridBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
@@ -48,98 +45,56 @@ export default function Hero() {
     "Mentoring & Team Leadership",
   ];
 
-  const [code] = useState(`
-const profile = {
-    name: 'Nihal Ali',
-    title: 'Full Stack PHP/Laravel Developer',
-    experience: 'Production-grade',
-    domains: ['Fintech', 'ERP', 'HRMS', 'Enterprise'],
-    skills: [
-        'PHP', 'Laravel', 'Livewire', 'RESTful APIs',
-        'MySQL', 'PostgreSQL', 'Redis', 'JavaScript',
-        'React', 'Tailwind CSS', 'Bootstrap',
-        'Docker', 'Azure', 'Payment Gateways',
-        'IoT Integration', 'Code Review', 'Mentoring'
-    ],
-    practices: [
-        'SOLID Principles', 'Design Patterns',
-        'CI/CD Pipelines', 'Unit Testing (PHPUnit)'
-    ],
-    seniorLevel: true,
-    hireable: function() {
-        return (
-            this.seniorLevel &&
-            this.skills.length >= 10
-        );
-    }
-};
-  `);
+  const codeLines = [
+    { num: 1, content: [<span key="1-k" className="text-purple-400">const</span>, " ", <span key="1-v" className="text-blue-400">profile</span>, " ", <span key="1-eq" className="text-gray-500">=</span>, " ", <span key="1-br" className="text-gray-500">{'{'}</span>] },
+    { num: 2, content: ["  ", <span key="2-k" className="text-cyan-400">name</span>, <span key="2-c1" className="text-gray-500">: </span>, <span key="2-v" className="text-emerald-400">'Nihal Ali'</span>, <span key="2-c2" className="text-gray-500">,</span>] },
+    { num: 3, content: ["  ", <span key="3-k" className="text-cyan-400">title</span>, <span key="3-c1" className="text-gray-500">: </span>, <span key="3-v" className="text-emerald-400">'Full Stack PHP/Laravel Developer'</span>, <span key="3-c2" className="text-gray-500">,</span>] },
+    { num: 4, content: ["  ", <span key="4-k" className="text-cyan-400">location</span>, <span key="4-c1" className="text-gray-500">: </span>, <span key="4-v" className="text-emerald-400">'Malappuram, Kerala'</span>, <span key="4-c2" className="text-gray-500">,</span>] },
+    { num: 5, content: ["  ", <span key="5-k" className="text-cyan-400">experience</span>, <span key="5-c1" className="text-gray-500">: </span>, <span key="5-v" className="text-emerald-400">'Production-grade'</span>, <span key="5-c2" className="text-gray-500">,</span>] },
+    { num: 6, content: ["  ", <span key="6-k" className="text-cyan-400">domains</span>, <span key="6-c1" className="text-gray-500">: [</span>, <span key="6-v1" className="text-emerald-400">'Fintech'</span>, <span key="6-c2" className="text-gray-500">, </span>, <span key="6-v2" className="text-emerald-400">'ERP'</span>, <span key="6-c3" className="text-gray-500">, </span>, <span key="6-v3" className="text-emerald-400">'HRMS'</span>, <span key="6-c4" className="text-gray-500">],</span>] },
+    { num: 7, content: ["  ", <span key="7-k" className="text-cyan-400">skills</span>, <span key="7-c1" className="text-gray-500">: [</span>] },
+    { num: 8, content: ["    ", <span key="8-v1" className="text-emerald-400">'PHP'</span>, <span key="8-c1" className="text-gray-500">, </span>, <span key="8-v2" className="text-emerald-400">'Laravel'</span>, <span key="8-c2" className="text-gray-500">, </span>, <span key="8-v3" className="text-emerald-400">'Livewire'</span>, <span key="8-c3" className="text-gray-500">, </span>, <span key="8-v4" className="text-emerald-400">'REST APIs'</span>, <span key="8-c4" className="text-gray-500">,</span>] },
+    { num: 9, content: ["    ", <span key="9-v1" className="text-emerald-400">'MySQL'</span>, <span key="9-c1" className="text-gray-500">, </span>, <span key="9-v2" className="text-emerald-400">'PostgreSQL'</span>, <span key="9-c2" className="text-gray-500">, </span>, <span key="9-v3" className="text-emerald-400">'Redis'</span>, <span key="9-c3" className="text-gray-500">, </span>, <span key="9-v4" className="text-emerald-400">'JavaScript'</span>, <span key="9-c4" className="text-gray-500">,</span>] },
+    { num: 10, content: ["    ", <span key="10-v1" className="text-emerald-400">'React'</span>, <span key="10-c1" className="text-gray-500">, </span>, <span key="10-v2" className="text-emerald-400">'Tailwind'</span>, <span key="10-c2" className="text-gray-500">, </span>, <span key="10-v3" className="text-emerald-400">'Docker'</span>, <span key="10-c3" className="text-gray-500">, </span>, <span key="10-v4" className="text-emerald-400">'Azure'</span>, <span key="10-c4" className="text-gray-500">,</span>] },
+    { num: 11, content: ["  ", <span key="11-c" className="text-gray-500">],</span>] },
+    { num: 12, content: ["  ", <span key="12-k" className="text-cyan-400">practices</span>, <span key="12-c1" className="text-gray-500">: [</span>, <span key="12-v1" className="text-emerald-400">'SOLID'</span>, <span key="12-c2" className="text-gray-500">, </span>, <span key="12-v2" className="text-emerald-400">'CI/CD'</span>, <span key="12-c3" className="text-gray-500">, </span>, <span key="12-v3" className="text-emerald-400">'PHPUnit'</span>, <span key="12-c4" className="text-gray-500">],</span>] },
+    { num: 13, content: ["  ", <span key="13-k" className="text-cyan-400">seniorLevel</span>, <span key="13-c1" className="text-gray-500">: </span>, <span key="13-v" className="text-orange-400">true</span>, <span key="13-c2" className="text-gray-500">,</span>] },
+    { num: 14, content: ["  ", <span key="14-k" className="text-purple-400">hireable</span>, <span key="14-c1" className="text-gray-500">{": () => "}</span>, <span key="14-v" className="text-blue-400">true</span>, <span key="14-c2" className="text-gray-500">,</span>] },
+    { num: 15, content: [<span key="15-br" className="text-gray-500">{'}'}</span>, <span key="15-c" className="text-gray-600">;</span>] },
+  ];
+
+  // const stats = [
+  //   { label: "Live Projects", value: "6" },
+  //   { label: "Tech Stack", value: "15+" },
+  //   { label: "Domains", value: "4" },
+  // ];
+
+  const socialLinks = [
+    { icon: Github, href: "https://github.com/Nihalali1967", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/nihal-ali-a72784235", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:nihalali1967@gmail.com", label: "Email" },
+    { icon: Phone, href: "tel:+916282981209", label: "Phone" },
+  ];
 
   useEffect(() => {
-    Prism.highlightAll();
-
-    // Add CSS animation for grid and dots
     const style = document.createElement("style");
     style.textContent = `
       @keyframes gridPulse {
         0%, 100% { opacity: 0.1; }
         50% { opacity: 0.3; }
       }
-      
-      @keyframes dotPulse {
-        0%, 100% { opacity: 0.2; transform: scale(0.8); }
-        50% { opacity: 0.5; transform: scale(1.2); }
-      }
-      
-      /* Media query for 1366x768 resolution */
-      @media screen and (width: 1366px) and (height: 768px), 
-             screen and (width: 1367px) and (height: 768px),
-             screen and (width: 1368px) and (height: 769px) {
-        .hero {
-          padding-top: 12rem !important;
-        }
-        .hero .container {
-          padding-top: 10rem !important;
-          margin-top: 5rem !important;
-        }
-        .hero-section-padding {
-          padding-top: 12rem !important;
-        }
-      }
     `;
     document.head.appendChild(style);
 
-    // Apply extra padding for 1366x768 resolution
-    const checkResolution = () => {
-      const isTargetResolution =
-        window.innerWidth >= 1360 &&
-        window.innerWidth <= 1370 &&
-        window.innerHeight >= 760 &&
-        window.innerHeight <= 775;
-
-      if (isTargetResolution) {
-        document.documentElement.style.setProperty(
-          "--hero-padding-top",
-          "12rem"
-        );
-      } else {
-        document.documentElement.style.setProperty("--hero-padding-top", "0");
-      }
-    };
-
-    checkResolution();
-    window.addEventListener("resize", checkResolution);
-
     return () => {
       document.head.removeChild(style);
-      window.removeEventListener("resize", checkResolution);
     };
-  }, [code]);
+  }, []);
 
   return (
     <>
-      <main className="bg-[#020617] text-white min-h-screen">
-        {/* SEO-rich hidden content for search engine crawlers */}
+      <main className="bg-[#04081A] text-white min-h-screen">
+        {/* SEO-rich hidden content */}
         <div className="sr-only" aria-hidden="false">
           <h1>Nihal Ali - Full Stack Developer | PHP Laravel Developer | Kerala India</h1>
           <p>Nihal Ali is a Full Stack PHP/Laravel Developer experienced in building scalable web applications
@@ -154,152 +109,176 @@ const profile = {
         </div>
 
         <section
-          className="hero min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-10 md:py-16 lg:py-0 hero-section-padding"
-          style={{ paddingTop: "var(--hero-padding-top, 0)" }}
+          className="min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8 pt-28 md:pt-28 pb-20"
           aria-label="Nihal Ali - Full Stack Developer Portfolio"
         >
-          <div className="absolute inset-0"></div>
-
-          {/* Choose one of these background options */}
           <GridBackground />
-
-          {/* Or keep the original backgrounds if you prefer */}
-          {/* <HexagonBackground /> */}
-          {/* <AnimatedGrid /> */}
-          {/* <DotBackground /> */}
 
           {/* Meteors Effect */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <Meteors number={10} />
+            <Meteors number={8} />
           </div>
 
+          {/* Background glows */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+
           {/* Main content container */}
-          <div
-            className="container mx-auto flex flex-col lg:flex-row items-center justify-between relative z-10 py-8 md:py-10 lg:py-12 md:pt-28 xl:pt-28"
-            style={{
-              paddingTop:
-                window.innerWidth >= 1360 &&
-                window.innerWidth <= 1370 &&
-                window.innerHeight >= 760 &&
-                window.innerHeight <= 775
-                  ? "12rem"
-                  : "",
-            }}
-          >
-            {/* Left column - Text content */}
-            <div className="w-full lg:w-1/2 mb-12 lg:mb-0 animate__animated animate__fadeInLeft relative">
-              {/* Decorative blurs */}
-              <div className="absolute hidden lg:-top-20 lg:-left-20 lg:block w-48 h-48 lg:w-64 lg:h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-              <div className="absolute hidden lg:block lg:top-40 lg:-right-20 w-48 h-48 lg:w-64 lg:h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
+          <div className="container mx-auto max-w-6xl relative z-10">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
 
-              {/* Welcome badge */}
-              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 mb-6 sm:mb-8 animate__animated animate__fadeInDown animate__delay-1s">
-                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-                <span className="text-gray-300 text-xs sm:text-sm font-medium">
-                  Available for full stack developer roles
-                </span>
-              </div>
+              {/* Left column - Professional intro */}
+              <div className="w-full lg:w-3/5 space-y-5 sm:space-y-6">
 
-              {/* Name section */}
-              <div className="relative mb-6 sm:mb-8">
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
-                  <SparklesText text="Hello" />
-                  <span className="relative inline-block">
-                    I&apos;m
-                    <span className="typing-effect gradient-text">
-                      {" "}
-                      Nihal Ali
-                    </span>
+                {/* Availability badge */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-sm">
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+                  <span className="text-emerald-300 text-xs sm:text-sm font-medium">
+                    Available for Full Stack Developer Roles
                   </span>
-                </h1>
-                <div className="absolute -z-10 top-1/2 -translate-y-1/2 left-1/4 w-24 sm:w-32 h-24 sm:h-32 bg-blue-500/20 rounded-full blur-2xl animate-pulse"></div>
-              </div>
-
-              {/* Role badge */}
-              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-blue-500/20 mb-6 sm:mb-8 backdrop-blur-sm animate__animated animate__fadeInUp animate__delay-1s">
-                <i className="fas fa-rocket text-blue-400 animate-bounce text-sm sm:text-base"></i>
-                <span>
-                  <FlipWords
-                    className={"text-lg sm:text-xl text-blue-400 font-medium"}
-                    words={words}
-                  />
-                </span>
-              </div>
-
-              {/* Description */}
-              <div className="relative mb-8 sm:mb-12 max-w-xl">
-                <p className="text-base sm:text-xl text-gray-300/90 leading-relaxed">
-                  Building scalable web applications for fintech, ERP, HRMS &
-                  enterprise clients using PHP, Laravel, MySQL, JavaScript & React.
-                </p>
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate__animated animate__fadeInUp animate__delay-2s">
-                {/* View Projects Button */}
-                <a
-                  href="/projects"
-                  className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-teal-400 p-0.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
-                >
-                  <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-teal-400">
-                    <span className="relative flex items-center justify-center gap-2 text-white font-medium">
-                      <span>View Projects</span>
-                      <i className="fas fa-arrow-right transform transition-all duration-300 group-hover:translate-x-1"></i>
-                    </span>
-                  </span>
-                </a>
-
-                {/* Contact Button */}
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download="Nihal_Ali_Resume.pdf"
-                  className="group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-gradient-to-r from-gray-800 to-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
-                >
-                  <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 border border-gray-700/50 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-gray-700">
-                    <span className="relative flex items-center justify-center gap-2 text-gray-300 font-medium group-hover:text-white">
-                      <span>Get Resume</span>
-                      <i className="fas fa-download transform transition-all duration-300 group-hover:rotate-12"></i>
-                    </span>
-                  </span>
-                </a>
-              </div>
-
-              {/* Floating badges */}
-              <div className="hidden lg:block absolute left-[5.5rem] top-[2.3rem] animate-float-slow">
-                <div className="px-4 py-2 rounded-lg bg-purple-500/10 backdrop-blur-sm border border-purple-500/20 text-purple-400">
-                  <i className="fas fa-layer-group"></i>&nbsp;&nbsp;Full Stack
                 </div>
-              </div>
-              <div className="hidden lg:block absolute right-10 top-20 animate-float">
-                <div className="px-4 py-2 rounded-lg bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 text-blue-400">
-                  <i className="fas fa-code"></i>&nbsp;&nbsp;PHP & Laravel
-                </div>
-              </div>
-              <div className="hidden lg:block absolute top-[17rem] left-[70%] transform -translate-x-1/2 animate-float">
-                <div className="px-4 py-2 rounded-lg bg-amber-500/10 backdrop-blur-sm border border-amber-500/20 text-amber-400">
-                  <i className="fas fa-users"></i>&nbsp;&nbsp;Team Leadership
-                </div>
-              </div>
-            </div>
 
-            {/* Right column - Code window */}
-            <div className="w-full lg:w-1/2 animate__animated animate__fadeInDown animate__delay-0.1s">
-              <div className="gradient-border">
-                <div className="code-window bg-[#091121]">
-                  <div className="window-header">
-                    <div className="window-dot bg-red-500"></div>
-                    <div className="window-dot bg-yellow-500"></div>
-                    <div className="window-dot bg-green-500"></div>
-                    <span className="ml-2 text-sm text-gray-400 flex items-center gap-2">
-                      <i className="fas fa-code"></i>
-                      developer.js
+                {/* Name & Title */}
+                <div className="space-y-3">
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+                    <span className="text-white">Nihal Ali</span>
+                  </h1>
+                  <div className="flex items-center gap-2">
+                    <div className="h-[2px] w-8 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full" />
+                    <span className="text-lg sm:text-xl lg:text-2xl font-semibold text-transparent bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text">
+                      Full Stack PHP / Laravel Developer
                     </span>
                   </div>
-                  <pre className="language-javascript">
-                    <code className="language-javascript">{code}</code>
-                  </pre>
+                </div>
+
+                {/* Rotating role text */}
+                <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                  <FlipWords
+                    className={"text-sm sm:text-base text-gray-300 font-medium"}
+                    words={words}
+                  />
+                </div>
+
+                {/* Professional summary */}
+                <p className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-xl">
+                  Building scalable web applications for fintech, ERP, HRMS & enterprise
+                  clients using PHP, Laravel, MySQL, JavaScript & React. Passionate about
+                  clean code, SOLID principles, and delivering production-grade solutions
+                  end-to-end.
+                </p>
+
+                {/* Stats row */}
+                {/* <div className="flex items-center gap-5 sm:gap-8 py-2">
+                  {stats.map((stat, i) => (
+                    <div key={i} className="flex flex-col">
+                      <span className="text-xl sm:text-2xl lg:text-3xl font-black text-white">
+                        {stat.value}
+                      </span>
+                      <span className="text-[10px] sm:text-xs lg:text-sm text-gray-500 font-medium uppercase tracking-wider">
+                        {stat.label}
+                      </span>
+                    </div>
+                  ))}
+                </div> */}
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
+                  <a
+                    href="#projects"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-500 to-teal-400 text-white font-medium text-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/25"
+                  >
+                    View Projects
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </a>
+
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download="Nihal_Ali_Resume.pdf"
+                    className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 font-medium text-sm transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:text-white"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download Resume
+                  </a>
+                </div>
+
+                {/* Social links */}
+                <div className="flex items-center gap-3 pt-2">
+                  {socialLinks.map((social, i) => (
+                    <a
+                      key={i}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 border border-white/10 text-gray-400 transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:text-white hover:scale-105"
+                    >
+                      <social.icon className="w-4 h-4" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right column - Professional code editor */}
+              <div className="w-full lg:w-2/5 max-w-md mx-auto lg:mx-0">
+                <div className="rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/10 bg-[#0d1117]">
+                  {/* Title bar with traffic lights + file tab */}
+                  <div className="flex items-center bg-[#161b22] border-b border-white/10 px-3 py-2.5 gap-2">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                      <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                      <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                    </div>
+                    {/* File tab */}
+                    <div className="ml-3 flex items-center gap-1.5 px-3 py-1 rounded-t-md bg-[#0d1117] border-t border-x border-white/10 text-xs text-gray-300">
+                      <FileCode2 className="w-3.5 h-3.5 text-yellow-400" />
+                      <span>developer.js</span>
+                    </div>
+                  </div>
+
+                  {/* Editor body with line numbers */}
+                  <div className="overflow-x-auto bg-[#0d1117]">
+                    <div className="flex text-xs sm:text-sm font-mono leading-relaxed py-3 min-w-max">
+                      {/* Line numbers gutter */}
+                      <div className="flex flex-col items-end pr-3 pl-4 select-none border-r border-white/5 flex-shrink-0">
+                        {codeLines.map((line) => (
+                          <span key={line.num} className="text-gray-600 leading-relaxed py-0.5">
+                            {line.num}
+                          </span>
+                        ))}
+                      </div>
+                      {/* Code content */}
+                      <div className="pl-4 pr-4 flex-1">
+                        {codeLines.map((line) => (
+                          <div key={line.num} className="py-0.5 whitespace-pre">
+                            {line.content}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Status bar */}
+                  <div className="flex items-center justify-between bg-[#161b22] border-t border-white/10 px-3 py-1.5 text-[10px] text-gray-500">
+                    <div className="flex items-center gap-3">
+                      <span className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                        JavaScript
+                      </span>
+                      <span>UTF-8</span>
+                      <span>LF</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span>Ln 15, Col 2</span>
+                      <Wifi className="w-3 h-3" />
+                      <Battery className="w-3 h-3" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -307,12 +286,12 @@ const profile = {
         </section>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-2">
-          <span className="text-gray-400 text-sm flex items-center gap-2">
-            <i className="fas fa-mouse text-blue-400"></i>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-1.5">
+          <span className="text-gray-500 text-xs flex items-center gap-1.5">
+            <MousePointerClick className="w-3.5 h-3.5 text-blue-400" />
             About me
           </span>
-          <i className="fas fa-chevron-down text-blue-400 text-xl"></i>
+          <ChevronDown className="w-4 h-4 text-blue-400" />
         </div>
         <PortfolioPage />
       </main>
