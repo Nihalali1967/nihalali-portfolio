@@ -196,7 +196,7 @@ export default function Hero() {
                   </a>
 
                   <a
-                    href="/resume.pdf"
+                    href="/Nihal Ali_Full stack developer.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     download="Nihal_Ali_Resume.pdf"
